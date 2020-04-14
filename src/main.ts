@@ -40,7 +40,10 @@ async function run(): Promise<void> {
     core.info(`  use-draft: ${draftSpec}`)
     jsonPath = `${fullpath}/${jsonInput}`
     let schema = undefined
-    if (schemaInput !== undefined && (schemaInput.startsWith('https://') || schemaInput.startsWith('http://'))) {
+    if (
+      schemaInput !== undefined &&
+      (schemaInput.startsWith('https://') || schemaInput.startsWith('http://'))
+    ) {
       schemaPath = schemaInput
       core.info(`Fetching schema from '${schemaPath}'`)
       schema = await schemaTools.FetchSchema(schemaPath)

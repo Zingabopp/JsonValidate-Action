@@ -502,7 +502,6 @@ function run() {
             const draftSpec = core.getInput('use-draft');
             let invalidInput = false;
             let schemaPath = '';
-            let jsonPath = undefined;
             if (process.env['TEST_ENVIRONMENT'] === 'true') {
                 core.info('Testing environment detected.');
                 schemaInput = process.env['TEST_SCHEMA_INPUT'];
@@ -520,13 +519,16 @@ function run() {
                 throw Error('Unable to validate json file due to invalid input.');
             }
             const allowOnlineFetch = false;
-            core.info(`  json-schema: ${schemaPath}`);
+            let jsonPath = jsonInput;
+            core.info(`  json-schema: ${schemaInput}`);
             core.info(`  json-file: ${jsonPath}`);
             core.info(`  use-draft: ${draftSpec}`);
+            jsonPath = `${fullpath}/${jsonInput}`;
             let schema = undefined;
-            if (schemaPath.startsWith('https://') || schemaPath.startsWith('http://')) {
+            if (schemaInput !== undefined && (schemaInput.startsWith('https://') || schemaInput.startsWith('http://'))) {
+                schemaPath = schemaInput;
                 core.info(`Fetching schema from '${schemaPath}'`);
-                schema = schemaTools.FetchSchema(schemaPath);
+                schema = yield schemaTools.FetchSchema(schemaPath);
             }
             else {
                 schemaPath = `${fullpath}/${schemaInput}`;
@@ -534,7 +536,6 @@ function run() {
                 const schemaString = fs_1.default.readFileSync(schemaPath, 'utf8');
                 schema = JSON.parse(schemaString);
             }
-            jsonPath = `${fullpath}/${jsonInput}`;
             const jsonString = fs_1.default.readFileSync(jsonPath, 'utf8');
             const jsonFileObject = JSON.parse(jsonString);
             const metaschemas = yield schemaTools.GetMetaSchemasForSchema(schema, __webpack_require__.ab + "drafts", allowOnlineFetch, draftSpec);
