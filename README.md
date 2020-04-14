@@ -9,13 +9,27 @@ The schema must use Draft-04, Draft-06, or Draft-07 from [json-schema.org](https
 
 
 # Usage
+The 'json-schema' path can either be a file path in your repository or a URL that starts with 'http://' or 'https://'.
 ```yaml
 uses: Zingabopp/JsonValidate-Action@v1
 with:
   json-schema: Path/To/Your/Schema.json
   json-file: Path/To/Your/JsonFile.json
 ```
-
+```yaml
+uses: Zingabopp/JsonValidate-Action@v1
+with:
+  json-schema: https://example.com/schema.json
+  json-file: Path/To/Your/JsonFile.json
+```
+If the schema doesn't provide the MetaSchema ($schema property), you can specify which one AJV should load using 'use-draft'. The options are 'draft-04', 'draft-06', and 'draft-07'.
+```yaml
+uses: Zingabopp/JsonValidate-Action@v1
+with:
+  json-schema: https://example.com/schema.json
+  json-file: Path/To/Your/JsonFile.json
+  use-draft: draft-06
+```
 ## Code in Master
 
 Install the dependencies  
