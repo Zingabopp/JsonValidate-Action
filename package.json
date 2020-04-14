@@ -19,8 +19,10 @@
   },
   "keywords": [
     "json",
-    "schema",
-    "validate"
+    "json-schema",
+    "validate",
+    "ajv",
+    "actions"
   ],
   "author": "Zingabopp",
   "license": "MIT",
