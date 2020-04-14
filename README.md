@@ -1,8 +1,4 @@
-<p align="center">
-  <a href="https://github.com/actions/typescript-action/actions"><img alt="typescript-action status" src="https://github.com/actions/typescript-action/workflows/build-test/badge.svg"></a>
-</p>
-
-# JsonValidate
+# JsonValidate<a href="https://github.com/actions/typescript-action/actions"><img alt="typescript-action status" src="https://github.com/actions/typescript-action/workflows/build-test/badge.svg"></a>
 A TypeScript GitHub Action that validates a JSON file against a schema using [AJV](https://github.com/epoberezkin/ajv).
 
 The schema must use Draft-04, Draft-06, or Draft-07 from [json-schema.org](https://json-schema.org/) as their meta-schema.
