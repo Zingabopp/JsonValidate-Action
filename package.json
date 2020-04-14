@@ -15,12 +15,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Zingabopp/CITSTest.git"
+    "url": "git+https://github.com/Zingabopp/JsonValidate-Action.git"
   },
   "keywords": [
-    "actions",
-    "node",
-    "setup"
+    "json",
+    "schema",
+    "validate"
   ],
   "author": "Zingabopp",
   "license": "MIT",
