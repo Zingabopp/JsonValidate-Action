@@ -22,6 +22,6 @@ jobs:
     - run: ls ./
     - uses: ./
       with: 
-        json-schema: ./ServerRepositorySchema.json
-        json-file: ./CompatibleServers.json
+        json-schema: https://raw.githubusercontent.com/Zingabopp/BeatSaberMultiplayerServerRepo/master/ServerRepositorySchema.json
+        json-file: __tests__/CompatibleServers.json
         use-draft: draft-06
