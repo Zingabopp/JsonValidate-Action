@@ -1,0 +1,93 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Zingabopp/BeatSaberMultiplayerServerRepo/master/ServerRepositorySchema.json",
+  "RepositoryName": "MultiplayerLiteServers",
+  "RepositoryDescription": "A collection of servers using a version of ServerHub compatible with Multiplayer Lite",
+  "AddedProp": "Something",
+  "Servers": [
+	  {
+          "ServerName": "Oceania Server Group - Sydney | BS",
+          "ServerAddress": "osgs.ddns.net",
+          "ServerPort": 3700
+      },
+	  {
+          "ServerName": "Oceania Server Group - SunCoast | BS",
+          "ServerAddress": "osgsc.ddns.net",
+          "ServerPort": 3700
+      },
+      {
+          "ServerName": "Vinyl Scratch's hub",
+          "ServerAddress": "91.228.155.183",
+          "ServerPort": 3700
+      },
+      {
+          "ServerName": "Tiger's Hub",
+          "ServerAddress": "bs.tigersserver.xyz",
+          "ServerPort": 3700
+      },
+      {
+          "ServerName": "TreasureHunters.nz",
+          "ServerAddress": "treasurehunters.nz",
+          "ServerPort": 3700
+      },
+      {
+          "ServerName": "CN_河北电信-四通八达",
+          "ServerAddress": "pantie.xicp.net",
+          "ServerPort": 3700
+      },
+      {
+          "ServerName": "QuestBoard",
+          "ServerAddress": "www.questboard.xyz",
+          "ServerPort": 3700
+      },
+      {
+          "ServerName": "Korty's Server",
+          "ServerAddress": "bs.useast.kortyservers.xyz",
+          "ServerPort": 3700
+      },
+      {
+          "ServerName": "CN_河北联通-WGzeyu",
+          "ServerAddress": "bbbear-wgzeyu.gtxcn.com",
+          "ServerPort": 3700
+      },
+      {
+          "ServerName": "CN_河南电信-张慧明",
+          "ServerAddress": "bs-zhm.tk",
+          "ServerPort": 3700
+      },
+      {
+          "ServerName": "hub.tgcfabian.nl",
+          "ServerAddress": "hub.tgcfabian.nl",
+          "ServerPort": 3700
+      },
+      {
+          "ServerName": "Senko Host",
+          "ServerAddress": "hub.senko.host",
+          "ServerPort": 3700
+      },
+      {
+          "ServerName": "Just Skill",
+          "ServerAddress": "hub.just-skill.ru",
+          "ServerPort": 3700
+      },
+      {
+          "ServerName": "Just Skill 2",
+          "ServerAddress": "hub.just-skill.ru",
+          "ServerPort": 3800
+      },
+      {
+          "ServerName": "Bluenoes Hub",
+          "ServerAddress": "bluenoes.ddns.net",
+          "ServerPort": 3700
+      },
+      {
+          "ServerName": "JBSTheGamer's Server",
+          "ServerAddress": "45.17.102.196",
+          "ServerPort": 3700
+      },
+      {
+          "ServerName": "JP_日本东京-WGzeyu",
+          "ServerAddress": "rj2ki2.gtxcn.com",
+          "ServerPort": 3700
+      }
+  ]
+}

@@ -1,0 +1,16 @@
+name: JsonValidate
+description: Validates a json file against a schema using ajv
+author: Zingabopp
+inputs:
+  json-schema:
+    description: Path to the json schema file
+    required: true
+  json-file:
+    description: Path to the json file to validate
+    required: true
+  use-draft:
+    description: Specify which schema the json-schema uses. Draft-07 is default, draft-04 and draft-06 are supported.
+    required: false
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
