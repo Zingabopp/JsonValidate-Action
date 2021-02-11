@@ -27,10 +27,6 @@ async function run(): Promise<void> {
       onlineFetchInfo = process.env['TEST_ONLINE_FETCH']
       jsonInput = './CompatibleServers.json'
     }
-    if (schemaInput === undefined || schemaInput.length === 0) {
-      core.error('A schema file must be provided for the json.')
-      invalidInput = true
-    }
     if (jsonInput === undefined || jsonInput.length === 0) {
       core.error('A json file to validate must be provided.')
       invalidInput = true
@@ -44,6 +40,13 @@ async function run(): Promise<void> {
           `'allow-online-fetch' input of '${onlineFetchInfo}' is invalid.`
         )
       }
+    }
+    if (
+      allowOnlineFetch === false &&
+      (schemaInput === undefined || schemaInput.length === 0)
+    ) {
+      core.error('A schema file must be provided for the json.')
+      invalidInput = true
     }
     if (invalidInput) {
       throw Error('Unable to validate json file due to invalid input.')

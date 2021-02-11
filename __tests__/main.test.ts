@@ -19,6 +19,19 @@ describe('Use schema from file', () => {
   })
 })
 
+describe('Use schema from online fetch', () => {
+  it('outputs a debug message', async () => {
+    process.env['GITHUB_WORKSPACE'] = __dirname
+    process.env['TEST_ENVIRONMENT'] = 'true'
+    process.env['TEST_ONLINE_FETCH'] = 'true'
+    const infoMock = jest.spyOn(core, 'info')
+    const failedMock = jest.spyOn(core, 'setFailed')
+    await run()
+    expect(failedMock).toHaveBeenCalledTimes(0)
+    expect(infoMock).toHaveBeenCalledWith('JSON is valid!')
+  })
+})
+
 describe('Use schema from http source', () => {
   it('outputs a debug message', async () => {
     process.env['GITHUB_WORKSPACE'] = __dirname
