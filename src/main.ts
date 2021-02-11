@@ -13,12 +13,18 @@ async function run(): Promise<void> {
     // Get Inputs
     let schemaInput: string | undefined = core.getInput('json-schema')
     let jsonInput: string | undefined = core.getInput('json-file')
-    const draftSpec: string | undefined = core.getInput('use-draft')
+    let draftSpec: string | undefined = core.getInput('use-draft')
+    let onlineFetchInfo: string | undefined = core.getInput(
+      'allow-online-fetch'
+    )
+    let allowOnlineFetch = false
     let invalidInput = false
     let schemaPath = ''
     if (process.env['TEST_ENVIRONMENT'] === 'true') {
       core.info('Testing environment detected.')
       schemaInput = process.env['TEST_SCHEMA_INPUT']
+      draftSpec = process.env['TEST_DRAFT_SPEC']
+      onlineFetchInfo = process.env['TEST_ONLINE_FETCH']
       jsonInput = './CompatibleServers.json'
     }
     if (schemaInput === undefined || schemaInput.length === 0) {
@@ -29,11 +35,22 @@ async function run(): Promise<void> {
       core.error('A json file to validate must be provided.')
       invalidInput = true
     }
+    if (onlineFetchInfo !== undefined && onlineFetchInfo.length > 0) {
+      if (onlineFetchInfo === 'true') {
+        allowOnlineFetch = true
+        core.info('Online schema fetch is enabled.')
+      } else if (onlineFetchInfo !== 'false') {
+        core.warning(
+          `'allow-online-fetch' input of '${onlineFetchInfo}' is invalid.`
+        )
+      }
+    }
     if (invalidInput) {
       throw Error('Unable to validate json file due to invalid input.')
     }
-    const allowOnlineFetch = false
-
+    if (process.env['TEST_ENVIRONMENT'] === 'true') {
+      core.debug(`allowOnlineFetch:${allowOnlineFetch}`)
+    }
     let jsonPath = jsonInput
     core.info(`  json-schema: ${schemaInput}`)
     core.info(`  json-file: ${jsonPath}`)
