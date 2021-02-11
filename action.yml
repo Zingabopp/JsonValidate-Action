@@ -4,7 +4,7 @@ author: Zingabopp
 inputs:
   json-schema:
     description: Path to the json schema file
-    required: false
+    required: true
   json-file:
     description: Path to the json file to validate
     required: true
