@@ -15,5 +15,5 @@ inputs:
     description: Allow the schema specified in the json-file to be downloaded.
     required: false
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'dist/index.js'
